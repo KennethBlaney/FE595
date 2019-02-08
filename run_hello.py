@@ -10,7 +10,6 @@ def hello_world():
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello_person(name):
-    a = 1/0
     return "Hello, {}!".format(name)
 
 
