@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['GET'])
 def hello_world():
+    print("what should I print?")
     return "Hello, world!"
 
 
