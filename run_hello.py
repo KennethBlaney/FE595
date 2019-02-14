@@ -10,7 +10,7 @@ def hello_world():
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello_person(name):
-    return render_template('index.html', title='Home', user=user)
+    return render_template('index.html', title='Home', user=name)
 
 
 if __name__ == "__main__":
