@@ -5,13 +5,12 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['GET', 'POST'])
 def hello_world():
-    print("what should I print?")
-    return "Hello, world!"
+    return render_template('index.html')
 
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello_person(name):
-    return render_template('index.html', title='Home', user=name)
+    return render_template('index.html', user=name)
 
 
 if __name__ == "__main__":
