@@ -1,17 +1,10 @@
 from flask import Flask
-from flask import render_template
 app = Flask(__name__)
 
 
 @app.route('/hello', methods=['GET', 'POST'])
 def hello_world():
-    print("what should I print?")
-    return "Hello, world!!!"
-
-
-@app.route('/hello/<name>', methods=['GET'])
-def hello_person(name):
-    return render_template('hello.html', name=name)
+    return "Hello, world!"
 
 
 if __name__ == "__main__":
