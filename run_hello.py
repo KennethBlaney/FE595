@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
@@ -20,6 +20,18 @@ def serve_html(name):
     </body>
     </html>
     """
+
+@app.route('/sample_post', methods=['POST'])
+def sample_post():
+    # Extract the json from the incoming request.
+    content = request.json
+    # Do some work on the content
+    if "text" not in content:
+        return jsonify({"error": "Required field 'text' is missing"}), 400
+    else:
+        print(content["text"])
+    # Return what you need when processing is done.
+    return jsonify({"text": content["text"]})
 
 
 if __name__ == "__main__":
